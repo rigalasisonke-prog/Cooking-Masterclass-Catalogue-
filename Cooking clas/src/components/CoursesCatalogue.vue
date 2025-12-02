@@ -1,5 +1,10 @@
 <script>
+import NavBar from './NavBar.vue';
+
 export default{
+        components:{
+            NavBar
+        },
         data(){
             return{
                 courses: [
@@ -49,7 +54,11 @@ export default{
         }
 </script>
 <template>
-    <div class="cards">
+    <div class="container">
+        <NavBar :courses="courses"/>
+        <hr>
+        </div>
+        <div class="cards">
         <div class="card" style="width: 18rem;" v-for="course in courses" :key="course.id">
             <img :src="course.img" class="card-img-top" :alt="course.id">
             <div class="card-body">
